@@ -29,6 +29,6 @@ jobs:
         password: admin123
         format: raw
         repository: zip
-        coordinates: ''
+        coordinates: none=''
         assets: extension=zip
         filename: test.zip

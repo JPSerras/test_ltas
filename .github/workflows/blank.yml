@@ -20,7 +20,7 @@ jobs:
         with:
           java-version: 1.8
       - name: Publish package
-        run: mvn deploy:deploy-file -DgroupId=g1 -DartifactId=art1 -Dversion=1.0.0 -Dpackaging=zip -Dfile=test.zip -Durl=http://localhost:8081/repository/zip
+        run: mvn deploy:deploy-file -DgroupId=g1 -DartifactId=art1 -Dversion=1.0.0 -Dpackaging=zip -Dfile=test.zip -DrepositoryId=github -Durl=http://localhost:8081/repository/zip
         env:
           GITHUB_ACTOR: admin
           GITHUB_TOKEN: admin123

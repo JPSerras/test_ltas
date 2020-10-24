@@ -27,8 +27,8 @@ jobs:
         serverUrl: http://127.0.0.1:8081
         username: admin
         password: admin123
-        format: raw
-        repository: zip
-        coordinates: none=''
+        format: maven2
+        repository: mvn
+        coordinates: groupId=com.example artifactId=app version=1.0.0
         assets: extension=zip
         filename: test.zip

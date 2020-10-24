@@ -23,6 +23,6 @@ jobs:
           server-username: admin
           server-password: admin123
       - name: Publish package
-        run: deploy:deploy-file -Dpackaging=zip -Dfile=test.zip -DrepositoryId=zip -Durl=http://localhost:8081/repository/zip
+        run: mvn deploy:deploy-file -Dpackaging=zip -Dfile=test.zip -DrepositoryId=zip -Durl=http://localhost:8081/repository/zip
 
 

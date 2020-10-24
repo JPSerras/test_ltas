@@ -11,24 +11,18 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
-
+  publish:
     runs-on: self-hosted
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Set up JDK 1.8
-      uses: actions/setup-java@v1
-      with:
-        java-version: 1.8
-    - name: Nexus Repo Publish
-      uses: sonatype-nexus-community/nexus-repo-github-action@master
-      with:
-        serverUrl: http://127.0.0.1:8081/repository
-        username: admin
-        password: admin123
-        format: maven2
-        repository: mvn
-        coordinates: groupId=com.example artifactId=app version=1.0.0
-        assets: extension=zip
-        filename: test.zip
+      - uses: actions/checkout@v2
+      - name: Set up Maven Central Repository
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+          server-id: zip
+          server-username: admin
+          server-password: admin123
+      - name: Publish package
+        run: deploy:deploy-file -Dpackaging=zip -Dfile=test.zip -DrepositoryId=zip -Durl=http://localhost:8081/repository/zip
+
+

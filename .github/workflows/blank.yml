@@ -26,9 +26,9 @@ jobs:
         serverUrl: http://95.92.97.207
         username: admin
         password: admin123
-        format: maven2
-        repository: maven-releases
-        coordinates: groupId=com.example artifactId=app version=1.0.0
+        format: raw
+        repository: zip
+        coordinates: version=1.0.0
         assets: extension=zip
         filename: test.zip
 #    runs-on: self-hosted

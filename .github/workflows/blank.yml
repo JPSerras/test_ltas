@@ -15,6 +15,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    - uses: actions/checkout@v2
     - name: Nexus Repo Publish
       run: curl -v -u admin:admin123 --upload-file test.zip http://95.92.97.207/repository/zip/test.zip
       shell: bash

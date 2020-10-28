@@ -20,7 +20,7 @@ jobs:
         url: http://95.92.97.207/
         token: "myroot"
         secrets: |
-            secret/data/ github
+            secret/data/github github
     - name: test
       run: echo $github
       shell: bash

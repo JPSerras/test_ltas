@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: hashicorp/vault-action@v2.0.1
       with:
-        url: http://95.92.97.207
+        url: http://95.92.97.207/v1/
         token: "myroot"
         secrets: |
             secret/ github

@@ -15,20 +15,13 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Nexus Repo Publish
-      run: curl -v -u admin:admin123 --upload-file test.zip http://95.92.97.207/repository/zip/test.zip
+    - uses: hashicorp/vault-action@v2.0.1
+      with:
+        url: http://95.92.97.207/:8200
+        token: "myroot"
+        secrets: |
+            secret/ github
+    - name: test
+      run: echo $github
       shell: bash
-#    runs-on: self-hosted
- #   steps:
-  #    - uses: actions/checkout@v2
-   #   - name: Set up Maven Central Repository
-    #    uses: actions/setup-java@v1
-     #   with:
-      #    java-version: 1.8
-      #- name: Publish package
-       # run: mvn deploy:deploy-file -DgroupId=g1 -DartifactId=art1 -Dversion=1.0.0 -Dpackaging=zip -Dfile=test.zip -DrepositoryId=github -Durl=http://localhost:8081/repository/zip
-        #env:
-         # GITHUB_ACTOR: admin
-          #GITHUB_TOKEN: admin123
-    
+#    

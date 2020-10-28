@@ -22,6 +22,6 @@ jobs:
         secrets: |
             secret/data/github github
     - name: test
-      run: echo $github
+      run: echo "$GITHUB"
       shell: bash
 #    

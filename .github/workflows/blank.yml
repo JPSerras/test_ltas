@@ -15,16 +15,14 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Github Tag with semantic versioning
+    - name: GitHub Action to Setup GitVersion
       # You may pin to the exact commit or the version.
-      # uses: hennejg/github-tag-action@380490834de514714fd1e46c3d9724b8c9a1dc3b
-      uses: hennejg/github-tag-action@v4.2.4
+      # uses: StanleyGoldman/setup-gitversion@a374f5e1b8c33fb6efd03c402cb511f02eafa245
+      uses: StanleyGoldman/setup-gitversion@v1.0.1
       with:
-        # Required for permission to tag the repo.
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        # Comma separated list of branches (bash reg exp accepted) that will generate the release tags. Other branches and pull-requests generate versions postfixed with the commit hash and do not generate any tag. Examples: `master` or `.*` or `release.*,hotfix.*,master`...
-        release_branches: master, develop
-        # Do not perform taging, just calculate next version and changelog, then exit
-        dry_run: true
+        # Version range or exact version of GitVersion to use
+        gitversion-version: 5.0.0
+        # Whether to run GitVersion
+        run-gitversion: true
         
 #    
